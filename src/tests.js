@@ -1,5 +1,5 @@
 const generateDummyTest = () => {
-	const delay = 7000 + Math.random() * 7000;
+	const delay = 500 + Math.random() * 2000;
 	const testPassed = Math.random() > 0.5;
 
 	return callback => setTimeout(() => callback(testPassed), delay);
@@ -18,7 +18,10 @@ export const tests = [
 		description: "run-on sentences don't run forever",
 		run: generateDummyTest()
 	},
-	{ description: 'question marks curl down, not up', run: generateDummyTest() },
+	{
+		description: 'question marks curl down, not up',
+		run: generateDummyTest()
+	},
 	{
 		description: 'semicolons are adequately waterproof',
 		run: generateDummyTest()
